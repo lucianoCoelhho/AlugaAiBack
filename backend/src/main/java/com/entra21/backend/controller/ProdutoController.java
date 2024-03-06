@@ -17,22 +17,22 @@ public class ProdutoController {
     @Autowired
     private ProdutoService produtoService;
 
-    @GetMapping("/")
+    @GetMapping("/get")
     public List<Produto> buscarTodos(){
         return produtoService.buscarTodos();
     }
 
-    @PostMapping("/")
+    @PostMapping("/post")
     public Produto inserir(@RequestBody Produto produto){
         return produtoService.inserir(produto);
     }
 
-    @PutMapping("/")
+    @PutMapping("/put")
     public Produto alterar(@RequestBody Produto produto){
         return produtoService.alterar(produto);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}delete")
     public ResponseEntity<Void> excluir(@PathVariable("id") long id){
         produtoService.excluir(id);
         return ResponseEntity.ok().build();
